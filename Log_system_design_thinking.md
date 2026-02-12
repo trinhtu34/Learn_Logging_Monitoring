@@ -22,5 +22,12 @@ Password, token, secret, PII, file upload, ...
 - Chia log thành 2 loại là: log sẽ được truy vấn nhiều ( Hot Storage ) và log không được truy vấn nhiều ( Cold Storage ). 
 - Tùy vào loại log mà tìm nơi lưu trữ cho phù hợp ví dụ như Hot Storage lưu ở local hoặc đâu đó trong X ngày, sau đó đưa vào Cold Storage ví dụ như `S3 Glacier`
 
+6. Không nên nhồi tất cả log vào 1 nơi mà không có chiến lược cụ thể để truy vấn
 
+7. Luôn enrich log bằng 'service_name', 'environment',... để dễ filter. 
+
+8. Chọn Storage cho phù hợp
+
+- ElasticSearch mạnh về query nhưng rất tốn tài nguyên.
+- Loki rẻ hơn, nhưng không phù hợp khi cần truy vấn phức tạp. 
 
